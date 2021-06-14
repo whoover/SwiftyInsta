@@ -45,11 +45,11 @@ public struct Authentication {
         public var user: User? { return storage?.user }
 
         /// The default storage.
-        var storage: Storage?
+        public var storage: Storage?
         /// The `HTTPCookie` stored as `Data`.
-        let data: [Data]
+        public let data: [Data]
         //// The `HTTPCookie`s.
-        var cookies: [HTTPCookie] { return data.compactMap(HTTPCookie.load) }
+        public var cookies: [HTTPCookie] { return data.compactMap(HTTPCookie.load) }
 
         /// Store the cache **if valid** in the user's keychain.
         /// You can save the returned value safely in your `UserDefaults`, or your database
@@ -101,11 +101,11 @@ public struct Authentication {
     }
 
     /// A `struct` holding reference to all the authentication most sensiblle cookie values.
-    struct Storage: Codable {
-        var dsUserId: String
-        var csrfToken: String
-        var sessionId: String
-        var rankToken: String
-        var user: User?
+    public struct Storage: Codable {
+        public var dsUserId: String
+        public var csrfToken: String
+        public var sessionId: String
+        public var rankToken: String
+        public var user: User?
     }
 }
